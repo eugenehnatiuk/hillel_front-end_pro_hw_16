@@ -4,22 +4,22 @@ const storedUsers = localStorage.getItem('usersArray');
 // const usersSet = new Set(storedUsers ? JSON.parse(storedUsers) : []);
 const usersArray = storedUsers ? JSON.parse(storedUsers) : [];
 
+const isUserExist = (email) => usersArray.some((user) => user.email === email);
+// for (const user of usersSet) {
+//   if (user.email === email) {
+//     return true;
+//   }
+// }
+// return false;
 
-function isUserExist(email) {
-  return usersArray.some(user => user.email === email);
-  // for (const user of usersSet) {
-  //   if (user.email === email) {
-  //     return true;
-  //   }
-  // }
-  // return false;
-}
+const getCurrentUser = (email) =>
+  usersArray.find((user) => user.email === email);
 
-function getCurrentUser(email) {
-  for (const user of usersArray) {
-    return user.email === email ? user : null;
-  }
-}
+// function getCurrentUser(email) {
+//   for (const user of usersArray) {
+//     return user.email === email ? user : null;
+//   }
+// }
 
 function isPasswordMatch(logInEmail, logInPassword) {
   const user = getCurrentUser(logInEmail);
@@ -122,7 +122,7 @@ regFormButton.addEventListener('click', (event) => {
       text = `Enter valid email`;
       showAlert(title, text);
     } else if (isUserExist(email)) {
-      showAlert('Error', `This email: ${email} is alreday exist`);
+      showAlert('Error', `This email: ${email} alreday exist`);
     }
   }
 });
@@ -158,5 +158,3 @@ logInButton.addEventListener('click', (event) => {
     showAlert(`Log-in failed`, `All fields required for entry`);
   }
 });
-
-

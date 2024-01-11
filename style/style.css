@@ -284,7 +284,7 @@ body {
   stroke-width: 1;
   position: absolute;
   top: 18%;
-  right: 15%;
+  right: 18%;
 }
 @media screen and (min-width: 1024px) {
   .action-forms__password-visability {
