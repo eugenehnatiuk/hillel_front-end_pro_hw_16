@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hillel Front-End Pro</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="modal-alert">
+        
+        </div>
+        <section class="wrapper">
+            <div class="acces-section container">
+                <div class="acces-section__forms-box">
+                    <div class="acces-section__switcher">
+                        <input type="checkbox" id="switch">
+                        <label for="switch">
+                            <span>Registration</span>
+                            <span>Log-in</span>
+                        </label>
+                    </div>
+                    <div class="acces-section__action-forms action-forms">
+                        <form class="action-forms__reg-in" action="#">
+                            <h2 class="action-forms__title">Registration</h2>
+                            <div class="action-forms__inputs">
+                                <input type="email" placeholder="Enter e-mail" name="email">
+                                <input type="text" placeholder="First name" id="firstName">
+                                <input type="text" placeholder="Last name" id="secondName">
+                                <input type="text" placeholder="Nickname" id="nickname">
+                                <div class="action-forms__password-box">
+                                    <input type="password" placeholder="Enter password" id="password">
+                                    <svg class="action-forms__password-visability">
+                                        <use href="#passeye"></use>
+                                    </svg>
+                                </div>
+                                <div class="action-forms__password-box">
+                                    <input type="password" placeholder="Repeat password" id="passwordConfirm">
+                                    <svg class="action-forms__password-visability">
+                                        <use href="#passeye"></use>
+                                    </svg>
+                                </div>
+                                <input type="submit" class="action-forms__submit-button" value="Register">
+                            </div>
+                            <p class="acces-section__alternative-acces">Register with</p>
+                            <ul class="acces-section__alternative-acces-list">
+                                <li class="acces-section__alternative-acces-item">
+                                    <a href="#facebook"><svg>
+                                            <use href="#facebook"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="acces-section__alternative-acces-item">
+                                    <a href="#linkedin"><svg>
+                                            <use href="#linkedin"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="acces-section__alternative-acces-item">
+                                    <a href="#instagram"><svg>
+                                            <use href="#instagram"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </form>
+                        <form class="action-forms__log-in" action="#">
+                            <h2 class="action-forms__title">Log-in</h2>
+                            <div class="action-forms__inputs">
+                                <input type="email" class="action-forms__email" placeholder="Enter e-mail" name="email">
+                                <div class="action-forms__password-box">
+                                    <input type="password" class="action-forms__password" placeholder="Enter password">
+                                    <svg class="action-forms__password-visability">
+                                        <use href="#passeye"></use>
+                                    </svg>
+                                </div>
+                                <div class="action-forms__memorise">
+                                    <div class="action-forms__remember-me-box">
+                                        <input type="checkbox" id="remember-me">
+                                        <label for="remember-me">Remember me</label>
+                                    </div>
+                                    <a class="action-forms__forget-password" href="#">Forgot password?</a>
+                                </div>
+
+                                <input type="submit" class="action-forms__submit-button" value="Log-in">
+                            </div>
+
+                            <p class="acces-section__alternative-acces">Log-in with</p>
+                            <ul class="acces-section__alternative-acces-list">
+                                <li class="acces-section__alternative-acces-item">
+                                    <a href="#facebook"><svg>
+                                            <use href="#facebook"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="acces-section__alternative-acces-item">
+                                    <a href="#linkedin"><svg>
+                                            <use href="#linkedin"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="acces-section__alternative-acces-item">
+                                    <a href="#instagram"><svg>
+                                            <use href="#instagram"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <svg class="svg_img" xmlns="http://www.w3.org/2000/svg">
+        <!-- Facebook -->
+        <symbol id="facebook">
+            <path
+                d="M10.103 0C8.412 0 6.79.64 5.593 1.781 4.396 2.922 3.724 4.47 3.724 6.082v3.386H.31a.303.303 0 0 0-.31.296v4.472c0 .163.139.295.31.295h3.414v9.173c0 .164.14.296.31.296h4.69c.172 0 .31-.132.31-.296v-9.173h3.444a.308.308 0 0 0 .302-.224l1.172-4.47c.049-.188-.1-.369-.301-.369H9.034V6.082c0-.27.113-.53.314-.72.2-.192.472-.299.755-.299h3.587c.171 0 .31-.132.31-.296V.296A.303.303 0 0 0 13.69 0h-3.587Z" />
+        </symbol>
+        <!-- Instagram -->
+        <symbol id="instagram">
+            <path
+                d="M12 7.764A4.24 4.24 0 0 0 7.757 12 4.24 4.24 0 0 0 12 16.236 4.24 4.24 0 0 0 16.242 12 4.24 4.24 0 0 0 12 7.764Z" />
+            <path fill-rule="evenodd"
+                d="M5.172.377a62.075 62.075 0 0 1 13.656 0c2.479.276 4.477 2.226 4.768 4.708a59.414 59.414 0 0 1 0 13.83c-.29 2.482-2.29 4.432-4.768 4.708a62.07 62.07 0 0 1-13.656 0C2.693 23.347.695 21.397.404 18.914a59.423 59.423 0 0 1 0-13.829C.694 2.603 2.694.653 5.172.377ZM18.527 4.18a1.304 1.304 0 1 0 1.306 1.304c0-.72-.585-1.304-1.306-1.304ZM5.8 12A6.196 6.196 0 0 1 12 5.81c3.425 0 6.2 2.771 6.2 6.19a6.196 6.196 0 0 1-6.2 6.19A6.196 6.196 0 0 1 5.799 12Z"
+                clip-rule="evenodd" />
+        </symbol>
+        <!-- Linkedin -->
+        <symbol id="linkedin">
+            <path
+                d="M2.72 0C1.218 0 0 1.186 0 2.65c0 1.463 1.218 2.649 2.72 2.649 1.502 0 2.72-1.186 2.72-2.65C5.44 1.186 4.222 0 2.72 0ZM.16 7.48c-.088 0-.16.07-.16.156v16.208c0 .086.072.156.16.156h5.12c.088 0 .16-.07.16-.156V7.636a.158.158 0 0 0-.16-.155H.16ZM8.48 7.48c-.088 0-.16.07-.16.156v16.208c0 .086.072.156.16.156h5.12c.088 0 .16-.07.16-.156v-8.727c0-.62.253-1.215.703-1.653a2.433 2.433 0 0 1 1.697-.685c.637 0 1.247.246 1.697.685.45.438.703 1.033.703 1.653v8.727c0 .086.072.156.16.156h5.12c.088 0 .16-.07.16-.156V13.097c0-3.025-2.702-5.392-5.792-5.118a9.374 9.374 0 0 0-2.776.682l-1.672.698V7.636a.158.158 0 0 0-.16-.155H8.48Z" />
+        </symbol>
+        <!-- Password Eye -->
+        <symbol id="passeye" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12.001 5C7.524 5 3.733 7.943 2.46 12c1.274 4.057 5.065 7 9.542 7 4.478 0 8.268-2.943 9.542-7-1.274-4.057-5.064-7-9.542-7Z" />
+        </symbol>
+    </svg>
+    <script src="index.js"></script>
+    <script src="modal_alert.js"></script>
+</body>
+
+</html>
