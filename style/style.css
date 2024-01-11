@@ -124,6 +124,7 @@ body {
 .wrapper {
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 
 .wrapper::before {
@@ -143,7 +144,14 @@ body {
           backdrop-filter: blur(5px);
   margin: 0 auto;
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden auto;
+  max-width: 450px;
+  min-width: 300px;
+}
+@media screen and (min-width: 768px) {
+  .acces-section {
+    max-width: 648px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .acces-section {
@@ -151,15 +159,9 @@ body {
   }
 }
 .acces-section__forms-box {
+  margin: 0 auto;
   padding: 65px 60px;
-  max-width: 450px;
-  min-width: 300px;
   text-align: center;
-}
-@media screen and (min-width: 768px) {
-  .acces-section__forms-box {
-    max-width: 648px;
-  }
 }
 .acces-section__switcher {
   margin-bottom: 55px;
@@ -244,7 +246,7 @@ body {
 .action-forms__inputs input {
   margin: 0 auto;
   display: block;
-  width: 80%;
+  width: 70%;
   height: 44px;
   outline: none;
   border: none;
@@ -267,11 +269,6 @@ body {
   font-family: "Roboto";
   font-size: 15px;
   font-weight: 400;
-}
-@media screen and (min-width: 1024px) {
-  .action-forms__inputs input {
-    width: 70%;
-  }
 }
 .action-forms__password-box {
   width: 100%;
@@ -362,7 +359,7 @@ body {
   color: #153416;
 }
 .action-forms.move {
-  transform: translateX(-118%);
+  transform: translateX(calc(-100% - 60px));
   transition: transform 0.3s linear;
 }
 @media screen and (min-width: 768px) {
@@ -373,6 +370,8 @@ body {
 
 .container {
   padding: 0 30px;
+  max-width: 450px;
+  margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   .container {

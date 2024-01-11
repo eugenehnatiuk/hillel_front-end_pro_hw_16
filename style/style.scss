@@ -17,7 +17,7 @@ body {
 .wrapper {
   position: relative;
   height: 100vh;
-  // overflow: hidden;
+  overflow: hidden;
 }
 .wrapper::before {
   content: '';
@@ -35,23 +35,23 @@ body {
   backdrop-filter: blur(5px);
   margin: 0 auto;
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden auto;
+  max-width: 450px;
+  min-width: 300px;
 
+  @include viewport-md {
+    max-width: 648px;
+  }
   @include viewport-lg {
     font-size: 13px;
   }
   // .acces-section__forms-box
 
   &__forms-box {
-    // margin: 0 auto;
+    margin: 0 auto;
     padding: 65px 60px;
-    max-width: 450px;
-    min-width: 300px;
-    text-align: center;
 
-    @include viewport-md {
-      max-width: 648px;
-    }
+    text-align: center;
   }
 
   // .acces-section__switcher
@@ -138,8 +138,8 @@ body {
   display: flex;
   gap: 60px;
   transition: transform 0.3s linear;
-  @include viewport-md {
-  }
+  // @include viewport-md {
+  // }
 
   // .action-forms__reg-in
 
@@ -160,7 +160,7 @@ body {
     input {
       margin: 0 auto;
       display: block;
-      width: 80%;
+      width: 70%;
       height: 44px;
       outline: none;
       border: none;
@@ -178,9 +178,9 @@ body {
         font-weight: 400;
       }
 
-      @include viewport-lg {
-        width: 70%;
-      }
+      // @include viewport-lg {
+      //   width: 70%;
+      // }
     }
     // & input:last-child {
     //     margin-bottom: 25px ;
@@ -303,7 +303,7 @@ body {
   }
 
   &.move {
-    transform: translateX(-118%);
+    transform: translateX(calc(-100% - 60px));
     transition: transform 0.3s linear;
 
     @include viewport-md {
@@ -314,6 +314,8 @@ body {
 
 .container {
   padding: 0 30px;
+  max-width: 450px;
+  margin: 0 auto;
   // від 0 до бескінечності
 
   @include viewport-md {
