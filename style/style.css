@@ -160,7 +160,7 @@ body {
 }
 .acces-section__forms-box {
   margin: 0 auto;
-  padding: 65px 60px;
+  padding: 65px 30px;
   text-align: center;
 }
 .acces-section__switcher {
@@ -178,7 +178,7 @@ body {
   margin: 0 auto;
   display: flex;
   cursor: pointer;
-  max-width: 70%;
+  max-width: 100%;
   height: 36px;
   border-radius: 30px;
   outline: 1px solid #153416;
@@ -205,6 +205,11 @@ body {
 }
 .acces-section__switcher input + label.checked::before {
   transform: translateX(97%);
+}
+@media screen and (min-width: 768px) {
+  .acces-section__switcher input + label {
+    max-width: 70%;
+  }
 }
 .acces-section__alternative-acces {
   color: #153416;
@@ -246,7 +251,7 @@ body {
 .action-forms__inputs input {
   margin: 0 auto;
   display: block;
-  width: 70%;
+  width: 100%;
   height: 44px;
   outline: none;
   border: none;
@@ -270,6 +275,14 @@ body {
   font-size: 15px;
   font-weight: 400;
 }
+@media screen and (min-width: 768px) {
+  .action-forms__inputs input {
+    width: 75%;
+  }
+}
+.action-forms__inputs .action-forms__submit-button {
+  padding: 0;
+}
 .action-forms__password-box {
   width: 100%;
   position: relative;
@@ -284,12 +297,12 @@ body {
   stroke-width: 1;
   position: absolute;
   top: 18%;
-  right: 18%;
+  right: 5%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .action-forms__password-visability {
     top: 18%;
-    right: 20%;
+    right: 15%;
   }
 }
 .action-forms__password-visability.visible {
