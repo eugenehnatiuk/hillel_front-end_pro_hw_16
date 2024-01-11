@@ -4,7 +4,11 @@
 @import 'modal';
 
 .svg_img {
-  display: none;
+  position: absolute;
+  z-index: -100;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
 body {
@@ -13,7 +17,7 @@ body {
 .wrapper {
   position: relative;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
 }
 .wrapper::before {
   content: '';
@@ -27,6 +31,11 @@ body {
   font-size: 15px;
   font-weight: 400;
   color: white;
+  background: rgba(233, 233, 233, 0.25);
+  backdrop-filter: blur(5px);
+  margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
 
   @include viewport-lg {
     font-size: 13px;
@@ -34,15 +43,11 @@ body {
   // .acces-section__forms-box
 
   &__forms-box {
-    margin: 0 auto;
+    // margin: 0 auto;
     padding: 65px 60px;
     max-width: 450px;
     min-width: 300px;
     text-align: center;
-    height: 100vh;
-    overflow: hidden;
-    background: rgba(233, 233, 233, 0.25);
-    backdrop-filter: blur(5px);
 
     @include viewport-md {
       max-width: 648px;
@@ -134,19 +139,12 @@ body {
   gap: 60px;
   transition: transform 0.3s linear;
   @include viewport-md {
-    // gap: 60px;
   }
 
   // .action-forms__reg-in
 
   &__reg-in {
     flex: 1 0 100%;
-    // min-width: 330px;
-    // max-width: 530px;
-
-    @include viewport-md {
-      // flex: 1 0 650px;
-    }
   }
 
   // .action-forms__title
@@ -180,8 +178,6 @@ body {
         font-weight: 400;
       }
 
-      
-
       @include viewport-lg {
         width: 70%;
       }
@@ -198,7 +194,7 @@ body {
     position: relative;
 
     & + div {
-      margin: 0 auto 45px auto; 
+      margin: 0 auto 45px auto;
     }
   }
 
@@ -243,8 +239,8 @@ body {
     justify-content: space-between;
     width: 80%;
 
-    @include viewport-lg{
-      width: 67%
+    @include viewport-lg {
+      width: 67%;
     }
   }
 
@@ -299,7 +295,7 @@ body {
     }
   }
 
-    // .action-forms__forget-password
+  // .action-forms__forget-password
 
   &__forget-password {
     text-decoration: none;
@@ -323,7 +319,6 @@ body {
   @include viewport-md {
     // від 768 >
     max-width: 708px;
-    margin: 0 auto;
   }
 
   // @include viewport-lg {

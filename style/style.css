@@ -110,7 +110,11 @@ picture {
 }
 
 .svg_img {
-  display: none;
+  position: absolute;
+  z-index: -100;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
 body {
@@ -120,7 +124,6 @@ body {
 .wrapper {
   position: relative;
   height: 100vh;
-  overflow: hidden;
 }
 
 .wrapper::before {
@@ -135,6 +138,12 @@ body {
   font-size: 15px;
   font-weight: 400;
   color: white;
+  background: rgba(233, 233, 233, 0.25);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
 }
 @media screen and (min-width: 1024px) {
   .acces-section {
@@ -142,16 +151,10 @@ body {
   }
 }
 .acces-section__forms-box {
-  margin: 0 auto;
   padding: 65px 60px;
   max-width: 450px;
   min-width: 300px;
   text-align: center;
-  height: 100vh;
-  overflow: hidden;
-  background: rgba(233, 233, 233, 0.25);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
 }
 @media screen and (min-width: 768px) {
   .acces-section__forms-box {
@@ -374,6 +377,5 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 708px;
-    margin: 0 auto;
   }
 }/*# sourceMappingURL=style.css.map */
