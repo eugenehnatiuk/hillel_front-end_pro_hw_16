@@ -1,19 +1,22 @@
 // ............MODAL ALERT ...............
 
-const storedUsers = localStorage.getItem('usersSet');
-const usersSet = new Set(storedUsers ? JSON.parse(storedUsers) : []);
+const storedUsers = localStorage.getItem('usersArray');
+// const usersSet = new Set(storedUsers ? JSON.parse(storedUsers) : []);
+const usersArray = storedUsers ? JSON.parse(storedUsers) : [];
+
 
 function isUserExist(email) {
-  for (const user of usersSet) {
-    if (user.email === email) {
-      return true;
-    }
-  }
-  return false;
+  return usersArray.some(user => user.email === email);
+  // for (const user of usersSet) {
+  //   if (user.email === email) {
+  //     return true;
+  //   }
+  // }
+  // return false;
 }
 
 function getCurrentUser(email) {
-  for (const user of usersSet) {
+  for (const user of usersArray) {
     return user.email === email ? user : null;
   }
 }
@@ -47,7 +50,7 @@ function showAlert(title, text) {
   });
 }
 
-// Registration
+// Regestration
 
 const registrationForm = document.querySelector('.action-forms__reg-in');
 const modalAlert = document.querySelector('.modal-alert');
@@ -56,7 +59,7 @@ const regFormButton = registrationForm.querySelector('input[type="submit"]');
 modalAlert.hidden = true;
 
 regFormButton.addEventListener('click', (event) => {
-  debugger;
+  // debugger;
   event.preventDefault();
   let title = '';
   let text = '';
@@ -90,8 +93,8 @@ regFormButton.addEventListener('click', (event) => {
         nickname: nickname,
         password: password,
       };
-      usersSet.add(newUser);
-      localStorage.setItem('usersSet', JSON.stringify(Array.from(usersSet)));
+      usersArray.push(newUser);
+      localStorage.setItem('usersArray', JSON.stringify(usersArray));
 
       title = `Registration of <span class="bold">${nickname}</span> is successfull.`;
       text = `Welcome ${firstName} ${secondName}`;
@@ -147,6 +150,7 @@ logInButton.addEventListener('click', (event) => {
       title = `Log-in sucseed`;
       text = `Welcomt back, ${currentUser.nickname}`;
       showAlert(title, text);
+      logInForm.reset();
     } else {
       showAlert(`Log-in failed`, `Wrong email or password`);
     }
@@ -154,3 +158,5 @@ logInButton.addEventListener('click', (event) => {
     showAlert(`Log-in failed`, `All fields required for entry`);
   }
 });
+
+
