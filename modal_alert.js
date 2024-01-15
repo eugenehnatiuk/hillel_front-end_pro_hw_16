@@ -40,15 +40,11 @@ function showAlert(title, text) {
   });
 }
 
-
 document.addEventListener(
   'click',
   (event) => {
     const modalAlertSection = document.querySelector('.modal-alert__alert');
-    if (
-      event.target !== modalAlertSection &&
-      !modalAlertSection.contains(event.target)
-    ) {
+    if (event.target !== modalAlertSection) {
       modalAlert.hidden = true;
     }
   },
