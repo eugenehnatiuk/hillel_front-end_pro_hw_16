@@ -25,39 +25,39 @@
     '.action-forms__password-box'
   );
 
-  passwordSections.forEach((passwordSection) => {
-    const passwordInput = passwordSection.querySelector('input');
-    const passwordInputSvg = passwordSection.querySelector('svg');
-    let isPasswordVisible = false;
+    passwordSections.forEach((passwordSection) => {
+      const passwordInput = passwordSection.querySelector('input');
+      const passwordInputSvg = passwordSection.querySelector('svg');
+      let isPasswordVisible = false;
 
-    function showPassword() {
-      isPasswordVisible = true;
-      passwordInput.type = 'text';
-      passwordInput.style.color = '#fff';
-      passwordInputSvg.classList.add('visible');
-      // passwordInput.focus();
-    }
-
-    function hidePassword() {
-      isPasswordVisible = false;
-      passwordInput.type = 'password';
-      passwordInput.style.color = '#153416';
-      passwordInputSvg.classList.remove('visible');
-      // passwordInput.focus();
-    }
-
-    passwordSection.addEventListener('click', ({ target }) => {
-      if (target === passwordInputSvg) {
-        isPasswordVisible ? hidePassword() : showPassword();
+      function showPassword() {
+        isPasswordVisible = true;
+        passwordInput.type = 'text';
+        passwordInput.style.color = '#fff';
+        passwordInputSvg.classList.add('visible');
+        // passwordInput.focus();
       }
-    });
-    // debugger
-    document.addEventListener('click', ({ target }) => {
-      if (!passwordInputSvg.contains(target)) {
-        hidePassword();
+
+      function hidePassword() {
+        isPasswordVisible = false;
+        passwordInput.type = 'password';
+        passwordInput.style.color = '#153416';
+        passwordInputSvg.classList.remove('visible');
+        // passwordInput.focus();
       }
+
+      passwordSection.addEventListener('click', ({ target }) => {
+        if (target === passwordInputSvg) {
+          isPasswordVisible ? hidePassword() : showPassword();
+        }
+      });
+      // debugger
+      document.addEventListener('click', ({ target }) => {
+        if (!passwordInputSvg.contains(target)) {
+          hidePassword();
+        }
+      });
     });
-  });
 
   //.................Placeholder...............
 
@@ -87,3 +87,12 @@
     true
   );
 })();
+
+
+// const div = document.querySelector('div');
+  
+//   addEventListener.call(div, 'click', ({ target: { tagName } }) => {
+//     if (tagName === 'DIV') {
+//       console.log(`Я нажал ${tagName}`);
+//     }
+//   });

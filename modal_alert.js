@@ -1,25 +1,14 @@
 // ............MODAL ALERT ...............
+const modalAlert = document.querySelector('.modal-alert');
 
 const storedUsers = localStorage.getItem('usersArray');
-// const usersSet = new Set(storedUsers ? JSON.parse(storedUsers) : []);
+
 const usersArray = storedUsers ? JSON.parse(storedUsers) : [];
 
 const isUserExist = (email) => usersArray.some((user) => user.email === email);
-// for (const user of usersSet) {
-//   if (user.email === email) {
-//     return true;
-//   }
-// }
-// return false;
 
 const getCurrentUser = (email) =>
   usersArray.find((user) => user.email === email);
-
-// function getCurrentUser(email) {
-//   for (const user of usersArray) {
-//     return user.email === email ? user : null;
-//   }
-// }
 
 function isPasswordMatch(logInEmail, logInPassword) {
   const user = getCurrentUser(logInEmail);
@@ -45,22 +34,37 @@ function showAlert(title, text) {
             </div>`;
 
   const modalAlertBtn = document.querySelector('.modal-alert__btn');
+
   modalAlertBtn.addEventListener('click', () => {
     modalAlert.hidden = true;
   });
 }
 
+
+document.addEventListener(
+  'click',
+  (event) => {
+    const modalAlertSection = document.querySelector('.modal-alert__alert');
+    if (
+      event.target !== modalAlertSection &&
+      !modalAlertSection.contains(event.target)
+    ) {
+      modalAlert.hidden = true;
+    }
+  },
+  true
+);
+
 // Regestration
 
 const registrationForm = document.querySelector('.action-forms__reg-in');
-const modalAlert = document.querySelector('.modal-alert');
 const regFormButton = registrationForm.querySelector('input[type="submit"]');
-
 modalAlert.hidden = true;
 
 regFormButton.addEventListener('click', (event) => {
   // debugger;
   event.preventDefault();
+
   let title = '';
   let text = '';
   const email = registrationForm
@@ -158,3 +162,11 @@ logInButton.addEventListener('click', (event) => {
     showAlert(`Log-in failed`, `All fields required for entry`);
   }
 });
+
+// document.addEventListener('click', ({ target }) => {
+//   if (!modalAlert.hidden) {
+//     if (target !== modalAlert && !modalAlert.contains(target)) {
+//       modalAlert.hidden = true;
+//     }
+//   }
+// });
